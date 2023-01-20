@@ -12,12 +12,12 @@ Practice in Linux administration, networking, monitoring, docker, CI/CD setup on
 
 ## Goals
 
-- [x] Basic administration features and tools used for this.
-- [ ] Linux networks configuration on several virtual machines.
-- [ ] Linux basic bash scripting and system research.
-- [ ] Real-time monitoring and research of the system status.
-- [ ] Introduction to docker. Developing a simple docker image for your own server.
-- [ ] Development of a simple CI/CD for the project written in C programming language. Building, testing, deployment.
+- [x] [Basic administration features and tools used for this](src/basic-administration.md)
+- [ ] Linux networks configuration on several virtual machines
+- [ ] Linux basic bash scripting and system research
+- [ ] Real-time monitoring and research of the system status
+- [ ] Introduction to docker. Developing a simple docker image for your own server
+- [ ] Development of a simple CI/CD for the project written in C programming language. Building, testing, deployment
 
 ## Credits
 
