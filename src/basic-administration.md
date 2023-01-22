@@ -2,6 +2,10 @@
 
 Author — @Danila Shabanov
 
+## Parts
+
+* [Part 1. Installation of the OS](#Part 1. Installation of the OS)
+
 ## Part 1. Installation of the OS
 
 > Installing **Ubuntu 20.04 Server LTS** without GUI.
