@@ -4,7 +4,21 @@ Author — @Danila Shabanov
 
 ## Parts
 
-* [Part 1. Installation of the OS](#Part 1. Installation of the OS)
+* [Part 1. Installation of the OS](#part-1-installation-of-the-os)
+* [Part 2. Creating a user](#part-2-creating-a-user)
+* [Part 3. Setting up the OS network](#part-3-setting-up-the-os-network)
+* [Part 4. OS Update](#part-4-os-update)
+* [Part 5. Using the **sudo** command](#part-5-using-the-sudo-command)
+* [Part 6. Installing and configuring the time service](#part-6-installing-and-configuring-the-time-service)
+* [Part 7. Installing and using text editors](#part-7-installing-and-using-text-editors)
+* [Part 8. Installing and basic setup of the **SSHD** service](#part-8-installing-and-basic-setup-of-the-sshd-service)
+* [Part 9. Installing and using the **top**, **htop** utilities](#part-9-installing-and-using-the-top-htop-utilities)
+* [Part 10. Using the **fdisk** utility](#part-10-using-the-fdisk-utility)
+* [Part 11. Using the **df** utility](#part-11-using-the-df-utility)
+* [Part 12. Using the **du** utility](#part-12-using-the-du-utility)
+* [Part 13. Installing and using the **ncdu** utility](#part-13-installing-and-using-the-ncdu-utility)
+* [Part 14. Working with system logs](#part-14-working-with-system-logs)
+* [Part 15. Using the **CRON** job scheduler](#part-15-using-the-cron-job-scheduler)
 
 ## Part 1. Installation of the OS
 
@@ -34,7 +48,7 @@ Display a list of users in a group: `groups <user_name>`
 
 ![Untitled](basic_administration_images/Untitled%201.png)
 
-s*creenshot of the command `cat /etc/passwd`*
+*screenshot of the command `cat /etc/passwd`*
 
 ![Untitled](basic_administration_images/Untitled%202.png)
 
@@ -53,7 +67,7 @@ Hosts stored in `/etc/hosts`
 
 Change name on `user-1`, and after reboot see the differences
 
-s*creenshot of the commands: `cat /etc/hostname` and `cat /etc/hosts`*
+*screenshot of the commands: `cat /etc/hostname` and `cat /etc/hosts`*
 
 ![Untitled](basic_administration_images/Untitled%204.png)
 
@@ -64,7 +78,7 @@ To check timezone run the command: `timedatecl`, timezone stored in /etc/timezon
 
 To change time zone run: `timedatectl set-timezone Europe/Moscow`
 
-s*creenshot of the changing timezone:*
+*screenshot of the changing timezone:*
 
 ![Untitled](basic_administration_images/Untitled%205.png)
 
@@ -75,7 +89,7 @@ To work with the network environment in ubuntu, the `net-tools` utility is used
 
 To see network configuration run: `ifconfig`
 
-s*creenshot of the command: `ifconfig`:*
+*screenshot of the command: `ifconfig`:*
 
 ![Untitled](basic_administration_images/Untitled%206.png)
 
@@ -88,11 +102,11 @@ To drop old ip run: `dhclient -r enp0s3`
 
 To get new ip run: `dhclient -v enp0se`
 
-s*creenshot of the command: `dhclient -r enp0se` and `ifconfig`*
+*screenshot of the command: `dhclient -r enp0se` and `ifconfig`*
 
 ![Untitled](basic_administration_images/Untitled%207.png)
 
-s*creenshot of the commands: `dhclient -v enp0se` and `ifconfig`*
+*screenshot of the commands: `dhclient -v enp0se` and `ifconfig`*
 
 ![Untitled](basic_administration_images/Untitled%208.png)
 
@@ -105,7 +119,7 @@ To transfer a URL use the util `curl`
 
 Gateway address can get with command: `route -n`
 
-s*creenshot of the commands: `curl [https://2ip.ru](https://2ip.ru)` and `route -n`*
+*screenshot of the commands: `curl [https://2ip.ru](https://2ip.ru)` and `route -n`*
 
 ![Untitled](basic_administration_images/Untitled%209.png)
 
@@ -114,13 +128,13 @@ s*creenshot of the commands: `curl [https://2ip.ru](https://2ip.ru)` and `route 
 
 On path `/etc/netplan/00-installer-config.yaml` stored network configurator.
 
-s*creenshot of network config file before changes:*
+*screenshot of network config file before changes:*
 
 ![Untitled](basic_administration_images/Untitled%2010.png)
 
 Disable DHCP and set static ip addresses, gateway, DNS server addresses.
 
-s*creenshot of network config file after changes:*
+*screenshot of network config file after changes:*
 
 ![Untitled](basic_administration_images/Untitled%2011.png)
 
@@ -131,11 +145,11 @@ Run `sudo netplan apply` and `sudo netplan try` for apply changes.
 
 For reboot VM run: `reboot`
 
-s*creenshot of the command: `ifconfig`*
+*screenshot of the command: `ifconfig`*
 
 ![Untitled](basic_administration_images/Untitled%2012.png)
 
-s*creenshot of the commands: `ping -c 10 [1.1.1.1](https://1.1.1.1)` and `ping -c 10 ya.ru`*
+*screenshot of the commands: `ping -c 10 [1.1.1.1](https://1.1.1.1)` and `ping -c 10 ya.ru`*
 
 ![Untitled](basic_administration_images/Untitled%2013.png)
 
@@ -152,7 +166,7 @@ Some newer packages are installed and some are removed to satisfy certain depend
 
 `apt` = most commonly used command options from `apt-get` and `apt-cache`, and `apt` has fewer but enough command options, but in a more organized way
 
-s*creenshot of the commands: `sudo apt update` and `apt dist-upgrade`*
+*screenshot of the commands: `sudo apt update` and `apt dist-upgrade`*
 
 ![Untitled](basic_administration_images/Untitled%2014.png)
 
@@ -165,7 +179,7 @@ Create file in directory /etc/sudoers.d/ and write next: `danila_adm ALL=(ALL:AL
 
 SUDO (Substitute User And Do) — allows strictly defined users to run specified programs with administrative privileges without entering the root password.
 
-s*creenshot of the commands: `hostname` and `sudo apt update` via danila_adm (user-2)*
+*screenshot of the commands: `hostname` and `sudo apt update` via danila_adm (user-2)*
 
 ![Untitled](basic_administration_images/Untitled%2015.png)
 
@@ -184,7 +198,7 @@ Stop ntp-deamon: `systemctl stop ntp` → synchronyze time: `ntpd -gq` → start
 
 If timedatectl show `System clock synchronized: yes` check [[this_link](https://serverfault.com/questions/1024770/ubuntu-20-04-time-sync-problems-and-possibly-incorrect-status-information)].
 
-s*creenshot of the command: `timedatectl`:*
+*screenshot of the command: `timedatectl`:*
 
 ![Untitled](basic_administration_images/Untitled%2016.png)
 
@@ -264,7 +278,7 @@ MCEdit: (to change word in all file: `f4` → `All`):
 
 ![Untitled](basic_administration_images/Untitled%2032.png)
 
-s*creenshots of the ssh config `/etc/ssh/sshd_config` file:*
+*screenshots of the ssh config `/etc/ssh/sshd_config` file:*
 
 ![Untitled](basic_administration_images/Untitled%2033.png)
 
@@ -284,7 +298,7 @@ Run the command `service sshd restart` and you can try ssh connection!
 
 ![Untitled](basic_administration_images/Untitled%2037.png)
 
-s*creenshot of the command: `netstat -tan`*
+*screenshot of the command: `netstat -tan`*
 
 ![Untitled](basic_administration_images/Untitled%2038.png)
 
@@ -301,7 +315,7 @@ s*creenshot of the command: `netstat -tan`*
 > Installing and run the top and htop utilities
 > 
 
-s*creenshot of the command: `top`*
+*screenshot of the command: `top`*
 
 ![Untitled](basic_administration_images/Untitled%2042.png)
 
@@ -473,7 +487,7 @@ login method — `tty=pts/0`
 
 Restart SSHd service — `service sshd restart`, service restart message — `tail /var/log/syslog` 
 
-screenshot of the commands `service sshd restart` and `tail /var/log/syslog`
+*screenshot of the commands `service sshd restart` and `tail /var/log/syslog`*
 
 ![Untitled](basic_administration_images/Untitled%2064.png)
 
@@ -498,7 +512,7 @@ The **`cron`** command-line utility is a [job scheduler](https://en.wikipedia
 
 ![Untitled](basic_administration_images/Untitled%2067.png)
 
-s*creenshot of the command: `tail /var/log/syslog`*
+*screenshot of the command: `tail /var/log/syslog`*
 
 ![Untitled](basic_administration_images/Untitled%2068.png)
 
